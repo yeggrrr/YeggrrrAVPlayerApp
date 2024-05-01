@@ -16,6 +16,7 @@
 		6890C3042BE1FB6F004EA98F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6890C3032BE1FB6F004EA98F /* Base */; };
 		6890C30C2BE21D33004EA98F /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890C30B2BE21D33004EA98F /* VideoTableViewCell.swift */; };
 		6890C30E2BE21DBE004EA98F /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890C30D2BE21DBE004EA98F /* VideoInfo.swift */; };
+		6890C3182BE252B0004EA98F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6890C3172BE252B0004EA98F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6890C3182BE252B0004EA98F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = YeggrrrAVPlayerApp;
+			packageProductDependencies = (
+				6890C3172BE252B0004EA98F /* Kingfisher */,
+			);
 			productName = YeggrrrAVPlayerApp;
 			productReference = 6890C2F12BE1FB6E004EA98F /* YeggrrrAVPlayerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 6890C2E82BE1FB6E004EA98F;
+			packageReferences = (
+				6890C3162BE252B0004EA98F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 6890C2F22BE1FB6E004EA98F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -429,6 +437,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6890C3162BE252B0004EA98F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6890C3172BE252B0004EA98F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6890C3162BE252B0004EA98F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6890C2FD2BE1FB6E004EA98F /* YeggrrrAVPlayerApp.xcdatamodeld */ = {

@@ -22,7 +22,8 @@ class VideoTableViewCell: UITableViewCell {
                     }
             } else {
                 DispatchQueue.main.async {
-                    self?.thumbnailImage.image = UIImage(named: "video.fill")
+                    self?.thumbnailImage.image = UIImage(systemName: "video.fill")
+                    self?.thumbnailImage.tintColor = .darkGray
                 }
             }
         }

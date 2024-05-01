@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import Kingfisher
 
 class ViewController: UIViewController {
     @IBOutlet weak var videoListTableView: UITableView!
@@ -25,7 +26,13 @@ class ViewController: UIViewController {
         videoListTableView.dataSource = self
         videoListTableView.delegate = self
         getData()
+        configureUI()
         
+    }
+    
+    func configureUI() {
+        view.backgroundColor = .darkGray
+        view.tintColor = .darkGray
     }
     
     func getData() {
@@ -33,7 +40,6 @@ class ViewController: UIViewController {
         
         Task {
             do {
-                let urlRequest = URLRequest(url: url)
                 let (data, _) = try await URLSession.shared.data(from: url)
                 let videoInfoList = try JSONDecoder().decode([VideoInfo].self, from: data)
                 self.videoInfoList = videoInfoList
@@ -69,6 +75,11 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource {
         cell.setThumbnail(imageURL: product.thumbnailUrl)
         cell.setTitle(title: product.title)
         
+        let placeholderImage = UIImage(systemName: "video.fill")
+        cell.thumbnailImage.kf.setImage(with: product.thumbnailUrl, placeholder: placeholderImage)
+        cell.thumbnailImage.kf.indicatorType = .activity
+        cell.thumbnailImage.kf.setImage(with: product.thumbnailUrl,
+                                    options: [.transition(.fade(0.5)), .forceTransition, .keepCurrentImageWhileLoading])
         return cell
     }
     
