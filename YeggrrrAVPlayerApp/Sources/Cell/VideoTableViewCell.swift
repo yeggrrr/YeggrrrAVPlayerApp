@@ -34,4 +34,8 @@ class VideoTableViewCell: UITableViewCell {
         self.titleLabel.text = title
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.thumbnailImage.image = nil
+    }
 }

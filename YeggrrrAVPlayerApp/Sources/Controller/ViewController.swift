@@ -12,6 +12,8 @@ import Kingfisher
 class ViewController: UIViewController {
     @IBOutlet weak var videoListTableView: UITableView!
     
+    let urlString = "https://gist.githubusercontent.com/poudyalanil/ca84582cbeb4fc123a13290a586da925/raw/14a27bd0bcd0cd323b35ad79cf3b493dddf6216b/videos.json"
+    
     var videoInfoList: [VideoInfo] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -20,14 +22,12 @@ class ViewController: UIViewController {
         }
     }
     
-    let urlString = "https://gist.githubusercontent.com/poudyalanil/ca84582cbeb4fc123a13290a586da925/raw/14a27bd0bcd0cd323b35ad79cf3b493dddf6216b/videos.json"
     override func viewDidLoad() {
         super.viewDidLoad()
         videoListTableView.dataSource = self
         videoListTableView.delegate = self
         getData()
         configureUI()
-        
     }
     
     func configureUI() {
@@ -37,16 +37,20 @@ class ViewController: UIViewController {
     
     func getData() {
         guard let url = URL(string: urlString) else { return }
-        
-        Task {
+        let urlRequest = URLRequest(url: url)
+        URLSession.shared.dataTask(with: urlRequest) { data, request, error in
+            guard let data = data else { return }
+            
             do {
-                let (data, _) = try await URLSession.shared.data(from: url)
-                let videoInfoList = try JSONDecoder().decode([VideoInfo].self, from: data)
-                self.videoInfoList = videoInfoList
+                let decorder = JSONDecoder()
+                let result = try decorder.decode([VideoInfo].self, from: data)
+                print(result)
+                self.videoInfoList = result
             } catch {
                 print("error:\(error)")
             }
         }
+        .resume()
     }
     
     // AVPlayerContoller 띄우기
@@ -79,7 +83,7 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource {
         cell.thumbnailImage.kf.setImage(with: product.thumbnailUrl, placeholder: placeholderImage)
         cell.thumbnailImage.kf.indicatorType = .activity
         cell.thumbnailImage.kf.setImage(with: product.thumbnailUrl,
-                                    options: [.transition(.fade(0.5)), .forceTransition, .keepCurrentImageWhileLoading])
+                                        options: [.transition(.fade(0.5)), .forceTransition, .keepCurrentImageWhileLoading])
         return cell
     }
     
