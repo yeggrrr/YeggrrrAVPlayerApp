@@ -28,7 +28,6 @@ class VideoTableViewCell: UITableViewCell {
         }
     }
     
-    
     // 타이틀
     func setTitle(title: String) {
         self.titleLabel.text = title

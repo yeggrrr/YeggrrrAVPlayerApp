@@ -10,11 +10,12 @@ import Foundation
 struct VideoInfo: Decodable {
     let id: String
     let title: String
-    let thumbnailUrl: String
+    let thumbnailUrl: URL
     let duration: String
     let uploadTime: String
     let views: String
     let author: String
+    let videoUrl: URL
     let description: String
     let subscriber: String
     let isLive: Bool
