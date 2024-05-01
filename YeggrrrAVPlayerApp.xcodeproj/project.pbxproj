@@ -14,6 +14,8 @@
 		6890C2FF2BE1FB6E004EA98F /* YeggrrrAVPlayerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6890C2FD2BE1FB6E004EA98F /* YeggrrrAVPlayerApp.xcdatamodeld */; };
 		6890C3012BE1FB6F004EA98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6890C3002BE1FB6F004EA98F /* Assets.xcassets */; };
 		6890C3042BE1FB6F004EA98F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6890C3032BE1FB6F004EA98F /* Base */; };
+		6890C30C2BE21D33004EA98F /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890C30B2BE21D33004EA98F /* VideoTableViewCell.swift */; };
+		6890C30E2BE21DBE004EA98F /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890C30D2BE21DBE004EA98F /* VideoInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6890C3002BE1FB6F004EA98F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6890C3032BE1FB6F004EA98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6890C3052BE1FB6F004EA98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6890C30B2BE21D33004EA98F /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		6890C30D2BE21DBE004EA98F /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,74 @@
 		6890C2F32BE1FB6E004EA98F /* YeggrrrAVPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
-				6890C2F42BE1FB6E004EA98F /* AppDelegate.swift */,
-				6890C2F62BE1FB6E004EA98F /* SceneDelegate.swift */,
-				6890C2F82BE1FB6E004EA98F /* ViewController.swift */,
-				6890C2FA2BE1FB6E004EA98F /* Main.storyboard */,
-				6890C3002BE1FB6F004EA98F /* Assets.xcassets */,
-				6890C3022BE1FB6F004EA98F /* LaunchScreen.storyboard */,
-				6890C3052BE1FB6F004EA98F /* Info.plist */,
+				6890C3102BE21E09004EA98F /* AVPlayerApp */,
+				6890C3112BE21E24004EA98F /* Resources */,
+				6890C3122BE21E44004EA98F /* Sources */,
 				6890C2FD2BE1FB6E004EA98F /* YeggrrrAVPlayerApp.xcdatamodeld */,
+				6890C3052BE1FB6F004EA98F /* Info.plist */,
 			);
 			path = YeggrrrAVPlayerApp;
+			sourceTree = "<group>";
+		};
+		6890C30F2BE21DC4004EA98F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6890C30D2BE21DBE004EA98F /* VideoInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6890C3102BE21E09004EA98F /* AVPlayerApp */ = {
+			isa = PBXGroup;
+			children = (
+				6890C2F62BE1FB6E004EA98F /* SceneDelegate.swift */,
+				6890C2F42BE1FB6E004EA98F /* AppDelegate.swift */,
+			);
+			path = AVPlayerApp;
+			sourceTree = "<group>";
+		};
+		6890C3112BE21E24004EA98F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6890C3002BE1FB6F004EA98F /* Assets.xcassets */,
+				6890C3022BE1FB6F004EA98F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6890C3122BE21E44004EA98F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6890C3142BE21E73004EA98F /* View */,
+				6890C3132BE21E62004EA98F /* Controller */,
+				6890C3152BE21E7E004EA98F /* Cell */,
+				6890C30F2BE21DC4004EA98F /* Model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6890C3132BE21E62004EA98F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6890C2F82BE1FB6E004EA98F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6890C3142BE21E73004EA98F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6890C2FA2BE1FB6E004EA98F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6890C3152BE21E7E004EA98F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6890C30B2BE21D33004EA98F /* VideoTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +206,9 @@
 				6890C2F92BE1FB6E004EA98F /* ViewController.swift in Sources */,
 				6890C2F52BE1FB6E004EA98F /* AppDelegate.swift in Sources */,
 				6890C2FF2BE1FB6E004EA98F /* YeggrrrAVPlayerApp.xcdatamodeld in Sources */,
+				6890C30E2BE21DBE004EA98F /* VideoInfo.swift in Sources */,
 				6890C2F72BE1FB6E004EA98F /* SceneDelegate.swift in Sources */,
+				6890C30C2BE21D33004EA98F /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
